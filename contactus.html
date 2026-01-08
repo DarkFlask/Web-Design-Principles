@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .return-btn {
+            position: absolute;
+            top: 400px;
+            left: 50px;
+        }
+        .map-link {
+            color: blue;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>
+                <img src="PCMR.png" width="600" height="100">
+                <button class="return-btn" onclick="redirectToSignIn()">Return</button>
+                <br><span class="contact-text">Reach Out</span>
+                <p>Good day! we are here to answer all your inquries, to maximize our conversation
+                    <br>you may email us through our business address below or call our landline number </p>
+            </h1>
+        </header>
+        <div class="contact-details">
+            <!-- Your contact details can go here -->
+            <!-- You can add form, contact information, or any other content you want -->
+            <!-- Example: -->
+            <h2>Contact Information</h2>
+            <p>Email: AdUMigs@pcmr.com</p>
+            <p>Dial: 123-456-7890</p>
+            
+            <p>Click <span class="map-link" onclick="redirectToGoogleMap()">here</span> to view our location on Google Maps.</p>
+        </div>
+    </div>
+
+    <script>
+        function redirectToSignIn() {
+            window.history.back(); // Simulate returning to the previous page
+        }
+
+        function redirectToGoogleMap() {
+            window.location.href = "https://www.google.com/maps/place/IT+CENTER+-+PC+PARTS,CORPORATE+PRINTER+AND+CCTVS/@14.6133798,121.0350127,19.75z/data=!4m10!1m2!2m1!1sgilmore+it+center!3m6!1s0x3397b7e61d9e4023:0x9ed97c9cf88412fa!8m2!3d14.6134995!4d121.0351441!15sChFnaWxtb3JlIGl0IGNlbnRlcloTIhFnaWxtb3JlIGl0IGNlbnRlcpIBEWVsZWN0cm9uaWNzX3N0b3Jl4AEA!16s%2Fg%2F11s1bjjdy8?entry=ttu";
+        }
+
+       
+    </script>
+</body>
+</html>

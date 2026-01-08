@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+    
+    .auth-container {
+        text-align: center;
+    }
+    
+    #auth-form {
+        display: inline-block;
+        text-align: left;
+    }
+    .header-image img {
+            width: 600px;
+            height: 100px;
+        }
+    
+        .about-us-btn{
+            position: absolute;
+            top: 350px;
+            left: 50px;
+        }
+        .contact-us-btn{
+            position: absolute;
+            top: 400px;
+            left: 50px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="auth-container">
+
+        <div class="header-image">
+            <img src="PCMR.png" alt="PCMR Logo">
+            <button class="about-us-btn" onclick="redirectToAboutUs()">About Us</button>
+            <button class="contact-us-btn" onclick="redirectToContactUs()">Contact Us</button>
+        </div>
+
+        <form id="auth-form" onsubmit="redirectToLogin(event)">
+            <h2>Registration Form</h2>
+            <input type="text" id="email" placeholder="Email" required>
+            <br>
+            <input type="password" id="password" placeholder="Password" required>
+            <div>
+                <input type="text" id="first-name" placeholder="First Name" required>
+                <br>
+                <input type="text" id="last-name" placeholder="Last Name" required>
+            </div>
+            <div>
+                <button type="submit" id="auth-button">Register</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function redirectToLogin(event) {
+            event.preventDefault(); 
+            
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            var firstName = document.getElementById("first-name").value;
+            var lastName = document.getElementById("last-name").value;
+            
+            // Save registration data to local storage
+            localStorage.setItem("email", email);
+            localStorage.setItem("password", password);
+            localStorage.setItem("first-name", firstName); // Store first name
+            localStorage.setItem("last-name", lastName); // Store last name
+
+            localStorage.setItem("registered", "true");
+        
+            
+            // Redirect to the login page
+            window.location.href = "login.html";
+        }
+        function redirectToAboutUs() {
+            window.location.href = "aboutus.html";
+        }
+        function redirectToContactUs() {
+            window.location.href = "contactus.html";
+        }
+    </script>
+</body>
+</html>

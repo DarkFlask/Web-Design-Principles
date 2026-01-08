@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .sign-out-btn {
+            position: absolute;
+            top: 300px;
+            left: 50px;
+        }
+        .about-us-btn{
+            position: absolute;
+            top: 350px;
+            left: 50px;
+        }
+        .contact-us-btn{
+            position: absolute;
+            top: 400px;
+            left: 50px;
+        }
+    </style>
+</head>
+<body class="">
+    
+    <div class="container">
+        <header>
+            <h1><img src="PCMR.png" width="600" height="100"></h1>
+            <button class="sign-out-btn" onclick="redirectToSignIn()">Sign Out</button>
+            <button class="about-us-btn" onclick="redirectToAboutUs()">About Us</button>
+            <button class="contact-us-btn" onclick="redirectToContactUs()">Contact Us</button>
+            <div class="shopping">
+                <img src="cart.png">
+                <span class="quantity">0</span>
+            </div>
+        </header>
+
+        <div class="list">
+          
+        </div>
+    </div>
+    <div class="card">
+        <h1>Cart</h1>
+        <ul class="listCard">
+        </ul>
+        <div class="checkOut">
+            <div class="total">0</div>
+            <button id="checkoutBtn" onclick="confirmCheckout()">Checkout</button>
+            <div class="closeShopping">Close</div>
+        </div>
+    </div>
+    
+    
+
+    <script src="app.js"></script>
+    <script>
+        function redirectToSignIn() {
+            var loggedIn = localStorage.getItem("email");
+            if (!loggedIn) {
+                alert("You need to sign in first to proceed to checkout.");
+                return;
+            }
+            window.location.href = "login.html"; 
+        }
+
+        function redirectToAboutUs() {
+            window.location.href = "aboutus.html";
+        }
+
+        function redirectToContactUs() {
+            window.location.href = "contactus.html";
+        }
+        
+
+        function confirmCheckout() {
+        var registered = localStorage.getItem("registered"); // Check if account is registered
+        if (!registered) {
+            alert("You need to register an account first to proceed to checkout.");
+            window.location.href = "login.html";
+            return; // Added return to prevent further execution
+        }
+
+        var loggedIn = localStorage.getItem("email");
+        if (!loggedIn) {
+            alert("You need to sign in first to proceed to checkout.");
+            return;
+        }
+        
+        var cartItems = document.querySelectorAll('.listCard li');
+        if (cartItems.length === 0) {
+            alert("Your cart is empty. Please add items to your cart before proceeding to checkout.");
+            return;
+        }
+
+        var confirmation = window.confirm("Are you sure you want to proceed to checkout?");
+        if (confirmation) {
+            window.location.href = "checkout.html"; // Redirect to the checkout page
+        }
+    }
+
+
+    </script>
+    
+</body>
+</html>

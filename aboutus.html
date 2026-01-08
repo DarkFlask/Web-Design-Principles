@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .return-btn {
+            position: absolute;
+            top: 400px;
+            left: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>
+                <img src="PCMR.png" width="600" height="100">
+                <button class="return-btn" onclick="redirectToSignIn()">Return</button>
+                <span class="about-text">About Us</span>
+            </h1>
+        </header>
+        <div class="about-details">
+            <!-- Your details about us can go here -->
+            <!-- You can add text, images, or any other content you want -->
+            <!-- Example: -->
+            <p>Welcome to PCMR! 
+            <br>We are the most trusted online shop that offers competitive prices.
+            <br>Our company is inpired by other prominent online stores that also caters computer parts.
+            <br><img src="PCMRGIF.gif" alt="PCMR GIF"></p>
+             Our goal is to provide various computer parts that ranges from CPU to PSU
+             <br> and to satisfy our customer's needs and offer them the greatest value from their money.
+            <br><img src="Intel.gif" alt="Intel" height="200"style="display: inline-block; margin-right: 20px;">
+            <img src="psu.gif" alt="PSU" style="display: inline-block;">
+            <br>
+            <br>Who's running the show behind the scenes?
+            <br><img src="its me.jpg" width="200" height="200" alt="me" style="display: inline-block; margin-right: 20px;">
+            <p style="display: inline-block; vertical-align: top;">Hello, I'm Miguel, a 3rd Year IT student in ADU  
+                <br>I owned this online store and started this with the dreams of being the pioneer in this industry.</p>
+                
+            </p>
+        </div>
+    </div>
+    <script>
+        function redirectToSignIn() {
+            window.history.back(); // Simulate returning to the previous page
+        }
+    </script>
+</body>
+</html>
